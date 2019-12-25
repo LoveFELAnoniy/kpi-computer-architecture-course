@@ -11,7 +11,7 @@ output reg [1:0] LEDR
 );
 
 
-wire [WIDTH-1:0] next_instr;	//To set next instraction
+wire [WIDTH-1:0] next_instr;		//To set next instraction
 wire [WIDTH-1:0] instr_addr;		//Instruction after PC
 wire [WIDTH-1:0] busW;
 wire [WIDTH-1:0] busA;
@@ -82,8 +82,7 @@ RegDst,
 	busB
 );
 extender ext(
-	imm16, 
-	ExtOp, 
+	imm16,  
 	ext_out
 );
 bus_mux mux_ALU(

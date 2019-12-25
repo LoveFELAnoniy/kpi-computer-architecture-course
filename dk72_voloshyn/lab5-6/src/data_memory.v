@@ -9,9 +9,11 @@ input [ADDR_W-1:0] addr;
 input we;
 input [WIDTH-1:0]data_in; 
 input clk;
-output reg [WIDTH-1:0] data_out;
+output [WIDTH-1:0] data_out;
 
 reg [WIDTH-1:0] datam [NUM_CELL-1:0];
+
+assign data_out = datam[addr];
 
 initial $readmemb("/home/sad/lab5-6/mem_data.dat", datam);
 
@@ -21,11 +23,11 @@ always @(posedge clk)begin
 	end
 
 end
+endmodule 
 
-always @(negedge clk)begin
-  if(~we) begin
-		data_out <= datam[addr];
-	end
-end
-endmodule	
 
+
+
+
+
+		

@@ -1,4 +1,6 @@
+//Was taken from Yesich Dmitro
 `timescale 1ns/1ps
+`include "funcfile.v"
 
 module alu_ctrl(op,funk,alu_ctrl_out);
 
@@ -17,10 +19,10 @@ always @(*) begin
 	else
 		war = op;
 	casez (war)
-		6'b100100: war = 6'b010110;
-		6'b100101: war = 6'b010110;
-		6'b100000: war = 6'b010111;
-		6'b100001: war = 6'b010111;
+		`LW: war = `ADD;
+		`SW: war = `ADD;
+		`BEQ: war = `SUB;
+		`BNE: war = `SUB;
 		default: war = war;
 	endcase
 
