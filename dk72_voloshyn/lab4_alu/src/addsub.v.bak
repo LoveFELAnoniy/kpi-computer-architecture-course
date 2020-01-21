@@ -16,7 +16,7 @@ assign temp = i_b ^ {32{i_opt}};
 always @* begin
 
     	var = {i_a, i_opt} + {temp, i_opt};
-		{ovfl, result} = var[33:1];
+	{ovfl, result} = var[33:1];
 
 end
 endmodule
